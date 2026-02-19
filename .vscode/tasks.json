@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Himada (PyInstaller)",
+      "type": "shell",
+      "command": "pyinstaller",
+      "args": [
+        "--noconfirm",
+        "--clean",
+        "--onefile",
+        "--windowed",
+        "-n",
+        "Himada",
+        "src/himada/app.py",
+        "--distpath",
+        "${workspaceFolder}/build/pyinstaller/dist",
+        "--workpath",
+        "${workspaceFolder}/build/pyinstaller/build",
+        "--specpath",
+        "${workspaceFolder}/build/pyinstaller"
+      ],
+      "options": {
+        "env": {
+          "PYTHONPYCACHEPREFIX": "${workspaceFolder}/build/pycache",
+          "PYINSTALLER_CONFIG_DIR": "${workspaceFolder}/build/pyinstaller/config"
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
